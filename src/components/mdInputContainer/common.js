@@ -42,10 +42,14 @@ export default {
     },
     onFocus() {
       this.parentContainer.isFocused = true;
+
+      this.$emit('focus',this);
     },
     onBlur() {
       this.parentContainer.isFocused = false;
       this.setParentValue();
+
+      this.$emit('blur',this);
     },
     onInput() {
       const value = this.$el.value;
